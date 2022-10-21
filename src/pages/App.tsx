@@ -1,8 +1,11 @@
-import { AppBar, autocompleteClasses, Avatar, Box, Card, Chip, Container, Divider, Grid, Paper, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar,Chip, Divider, Grid, Toolbar, Typography } from "@mui/material";
 import { spacing, Stack } from "@mui/system";
 import Button from "@mui/material/Button";
 import React, { MutableRefObject, useRef, useState } from "react";
 import './App.css';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import BusinessIcon from '@mui/icons-material/Business';
+
 export const App = () => {
   const refAboutMe = useRef<HTMLHeadingElement>(null);
   const refWorkHistory = useRef<HTMLHeadingElement>(null);
@@ -31,90 +34,214 @@ export const App = () => {
 
     return(
       <>
-      <Grid container>
+      <Grid container style={{background:'#fefeff'}}>
         <AppBar 
             style={{
               position:'fixed', 
-              background: '#6A5ACD',
+              background: '#73bbc5',
             }}
         >
             <Toolbar style={{justifyContent: 'space-evenly'}}>
                 <Stack direction="row" spacing={12}>
-                    <Button color="inherit" onClick={scrollAboutMe} >About Me</Button>
-                    <Button color="inherit" onClick={scrollWorkHistory}>Work History</Button>
-                    <Button color="inherit" onClick={scrollCertifications}>Certifications</Button>
+                    <Button color="inherit" onClick={scrollAboutMe}>
+                      <span className='description'>About Me</span>
+                    </Button>
+                    <Button color="inherit" onClick={scrollWorkHistory}>
+                      <span className='description'>Work History</span>
+                    </Button>
+                    <Button color="inherit" onClick={scrollCertifications}>
+                      <span className='description'>Certifications</span>
+                    </Button>
                 </Stack>
             </Toolbar>
         </AppBar>
-        </Grid>
         <Grid 
-        ref={refAboutMe}
-        style={{
-          marginTop: '80px'
-        }} 
+          ref={refAboutMe}
+          style={{
+            marginTop: '80px',
+          }} 
         >
           <Grid sx={{
               backgroundImage: `url(${"https://img.freepik.com/free-vector/abstract-flowing-waves-background_1048-11741.jpg?w=2000"})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover"
-            }}>
-              <h2 className="title">About Me</h2>
-              <Avatar sx={{ bgcolor: '#6A5ACD', marginLeft: 'auto', marginRight:'auto', width: 56, height: 56 }}>LR</Avatar>
-              
-              <Grid container>
-                <Grid item xs={4} sx={{marginLeft: 'auto', }}>
-                  <p className="aboutme">Description</p>
-                  <p className="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, 
-                    imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. 
-                    Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, 
-                    dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam 
-                    scelerisque pretium. Pellentesque ac odio venenatis, bibendum
-                  </p>
+            }}
+          >
+            <h2 className="title">About Me</h2>
+            <Avatar sx={{ marginTop:'30px' ,bgcolor: '#7f00e0', marginLeft: 'auto', marginRight:'auto', width: 56, height: 56 }}>LR</Avatar>
+            <p className="aboutme">Hey, I'm <span style={{color:'#7f00e0'}}>Larissa Randow</span> </p>
+            <Grid container sx={{marginTop:'20px'}}>
+              <Grid item xs={4} sx={{marginLeft: 'auto', }}>
+                <p className="aboutme">Description</p>
+                <p className="description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, 
+                  imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. 
+                  Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, 
+                  dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam 
+                  scelerisque pretium. Pellentesque ac odio venenatis, bibendum
+                </p>
+              </Grid>
+              <Grid item xs={4} sx={{marginRight: 'auto' }}>
+                <p className="aboutme">Skills</p>
+                <Grid sx={{justifyContent:'space-evenly', display:'flex'}}>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="C#"/>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label=".Net" />
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Typescript"/>
                 </Grid>
-                <Grid item xs={4} sx={{marginRight: 'auto'}}>
-                  <p className="aboutme">Skills</p>
-                  <Chip label="Chip Filled" style={{marginLeft: '50px'}}/>
-                  <Chip label="Chip Filled" />
-                  <Chip label="Chip Filled" />
-                  <Chip label="Chip Filled" />
+                <Grid sx={{justifyContent:'space-evenly', display:'flex', marginTop:'30px'}}>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="React" />
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Angular" />
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="HTML" />
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="CSS" />
+                </Grid>
+                <Grid sx={{justifyContent:'space-evenly', display:'flex', marginTop:'30px'}}>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="GitHub"/>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Git"/>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Azure" />
+                </Grid>
+                <Grid sx={{justifyContent:'space-evenly', display:'flex', marginTop:'30px'}}>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="MySql"/>
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Microsoft SQL Server" />
+                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Oracle" />
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-          
+          <Divider sx={{height:'10%', borderBottomWidth:'3px'}}/>
+        </Grid>
 
-        <Grid ref={refWorkHistory}
+        <Grid 
+          ref={refWorkHistory}
           style={{
-            margin: '80px 10px 0px 10px',
+            marginTop: '80px',
           }} 
         >
-            <h2 className="title">Work History</h2>
-            <h3>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam scelerisque pretium. Pellentesque ac odio venenatis, bibendum sapien eu, blandit dui. Vivamus lacinia tellus eros, consequat laoreet metus rhoncus ac. Morbi ac massa nibh. Suspendisse neque ipsum, interdum sit amet bibendum a, tempus id velit. Quisque vitae nunc dapibus, pellentesque risus eleifend, pellentesque nunc.
-              Proin semper maximus arcu a tempus. Cras ut dapibus massa. Donec volutpat quam elit, nec aliquet nulla varius quis. Fusce venenatis molestie nisl eu fringilla. Cras at tincidunt justo. Curabitur sed libero viverra, convallis urna ut, sodales nisi. Curabitur posuere pellentesque tellus in rhoncus. Praesent nec pulvinar tellus. Phasellus sodales lorem at metus porttitor, ut suscipit ligula dignissim. Nulla convallis, enim nec convallis ultrices, tortor ex molestie magna, semper cursus sem neque ut velit. Integer tincidunt odio magna, quis sollicitudin odio placerat eget.
-              Mauris at felis a neque vehicula dictum eget nec felis. Ut rutrum nec augue id sagittis. Nunc sem dolor, luctus eu venenatis vitae, placerat condimentum mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sagittis, magna venenatis lobortis ornare, urna mauris volutpat libero, ac commodo sapien ipsum hendrerit sapien. Maecenas luctus nunc nec libero finibus congue. Nam sagittis fringilla neque sit amet tincidunt.
-              Integer ac sagittis odio, non tempor ante. Aenean molestie gravida augue. Ut iaculis cursus sem laoreet gravida. Proin viverra iaculis velit at luctus. Etiam pellentesque interdum ullamcorper. Morbi tristique nulla vel urna efficitur, ac sodales mi venenatis. Mauris lacinia lacus ac ex sollicitudin, sit amet convallis lectus posuere. Nam elit justo, vestibulum suscipit finibus vel, egestas vel ligula. Aliquam erat volutpat. Nullam eget vulputate metus, vitae feugiat elit. Aenean ornare magna quis vestibulum mollis. Aenean nec lorem elementum, viverra quam eu, efficitur sem.
-              Nulla felis justo, commodo eu lobortis sed, faucibus at nibh. Maecenas faucibus molestie magna non semper. Phasellus nec lacus sed metus maximus maximus. Nullam et risus in libero pulvinar vestibulum ornare eleifend lectus. Sed neque mauris, fringilla varius vestibulum a, fringilla ac dui. Mauris ac felis felis. Aenean dolor dui, dapibus non euismod a, facilisis in nunc. Proin fermentum sem libero, sit amet lacinia libero rutrum ac. Nulla eu tellus iaculis, accumsan massa vitae, volutpat ligula.
-            </h3>
+          <h2 className="title">Work History</h2>
+          <Grid style={{justifyContent:'center', display:'flex'}}>
+            <Grid item xs={3} className='description'>
+              <Grid>
+                <p style={{float:'right', display:'inline-flex'}}>
+                  <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
+                  APRIL 2021 - OCTOBER 2022
+                </p>
+              </Grid>
+              <Grid>
+                <p style={{float:'right', display:'inline-flex'}}>
+                  <BusinessIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/> 
+                  Globalsys
+                </p>
+              </Grid>
+            </Grid>
+            <Divider 
+              orientation="vertical" 
+              flexItem 
+              style={{margin:'15px', background:'#7f00e0'}}/>
+            <Grid item xs={5} className='description'>
+              <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+              </p>
+            </Grid>
           </Grid>
 
-          <Paper 
-            ref={refCertifications}
-            style={{
-              margin: '80px 10px 0px 10px',
-            }} 
-          >
-            <h2 className="title">Certifications</h2>
-            <h3>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam scelerisque pretium. Pellentesque ac odio venenatis, bibendum sapien eu, blandit dui. Vivamus lacinia tellus eros, consequat laoreet metus rhoncus ac. Morbi ac massa nibh. Suspendisse neque ipsum, interdum sit amet bibendum a, tempus id velit. Quisque vitae nunc dapibus, pellentesque risus eleifend, pellentesque nunc.
-              Proin semper maximus arcu a tempus. Cras ut dapibus massa. Donec volutpat quam elit, nec aliquet nulla varius quis. Fusce venenatis molestie nisl eu fringilla. Cras at tincidunt justo. Curabitur sed libero viverra, convallis urna ut, sodales nisi. Curabitur posuere pellentesque tellus in rhoncus. Praesent nec pulvinar tellus. Phasellus sodales lorem at metus porttitor, ut suscipit ligula dignissim. Nulla convallis, enim nec convallis ultrices, tortor ex molestie magna, semper cursus sem neque ut velit. Integer tincidunt odio magna, quis sollicitudin odio placerat eget.
-              Mauris at felis a neque vehicula dictum eget nec felis. Ut rutrum nec augue id sagittis. Nunc sem dolor, luctus eu venenatis vitae, placerat condimentum mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sagittis, magna venenatis lobortis ornare, urna mauris volutpat libero, ac commodo sapien ipsum hendrerit sapien. Maecenas luctus nunc nec libero finibus congue. Nam sagittis fringilla neque sit amet tincidunt.
-              Integer ac sagittis odio, non tempor ante. Aenean molestie gravida augue. Ut iaculis cursus sem laoreet gravida. Proin viverra iaculis velit at luctus. Etiam pellentesque interdum ullamcorper. Morbi tristique nulla vel urna efficitur, ac sodales mi venenatis. Mauris lacinia lacus ac ex sollicitudin, sit amet convallis lectus posuere. Nam elit justo, vestibulum suscipit finibus vel, egestas vel ligula. Aliquam erat volutpat. Nullam eget vulputate metus, vitae feugiat elit. Aenean ornare magna quis vestibulum mollis. Aenean nec lorem elementum, viverra quam eu, efficitur sem.
-              Nulla felis justo, commodo eu lobortis sed, faucibus at nibh. Maecenas faucibus molestie magna non semper. Phasellus nec lacus sed metus maximus maximus. Nullam et risus in libero pulvinar vestibulum ornare eleifend lectus. Sed neque mauris, fringilla varius vestibulum a, fringilla ac dui. Mauris ac felis felis. Aenean dolor dui, dapibus non euismod a, facilisis in nunc. Proin fermentum sem libero, sit amet lacinia libero rutrum ac. Nulla eu tellus iaculis, accumsan massa vitae, volutpat ligula.
-            </h3>
-          </Paper>
-      </>
-    );
+          <Grid style={{justifyContent:'center', display:'flex'}}>
+            <Grid item xs={3} className='description'>
+              <Grid>
+                <p style={{float:'right', display:'inline-flex'}}>
+                  <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
+                  APRIL 2021 - OCTOBER 2022
+                </p>
+              </Grid>
+              <Grid>
+                <p style={{float:'right', display:'inline-flex'}}>
+                  <BusinessIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/> 
+                  Globalsys
+                </p>
+              </Grid>
+            </Grid>
+            <Divider 
+              orientation="vertical" 
+              flexItem 
+              style={{margin:'15px', background:'#7f00e0'}}/>
+            <Grid item xs={5} className='description'>
+              <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+              </p>
+            </Grid>
+          </Grid>
+
+          <Grid style={{justifyContent:'center', display:'flex'}}>
+            <Grid item xs={3} className='description'>
+              <Grid>
+                <p style={{float:'right', display:'inline-flex'}}>
+                  <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
+                  APRIL 2021 - OCTOBER 2022
+                </p>
+              </Grid>
+              <Grid>
+                <p style={{float:'right', display:'inline-flex'}}>
+                  <BusinessIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/> 
+                  Globalsys
+                </p>
+              </Grid>
+            </Grid>
+            <Divider 
+              orientation="vertical" 
+              flexItem 
+              style={{margin:'15px', background:'#7f00e0'}}/>
+            <Grid item xs={5} className='description'>
+              <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
+                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Sed malesuada lobortis pretium.
+              </p>
+            </Grid>
+          </Grid>
+          <Divider sx={{height:'5%', borderBottomWidth:'3px'}}/>
+
+        </Grid>
+
+        <Grid 
+          ref={refCertifications}
+          style={{
+            marginTop: '80px',
+          }} 
+        >
+          <h2 className="title">Certifications</h2>
+          <h3>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam scelerisque pretium. Pellentesque ac odio venenatis, bibendum sapien eu, blandit dui. Vivamus lacinia tellus eros, consequat laoreet metus rhoncus ac. Morbi ac massa nibh. Suspendisse neque ipsum, interdum sit amet bibendum a, tempus id velit. Quisque vitae nunc dapibus, pellentesque risus eleifend, pellentesque nunc.
+            Proin semper maximus arcu a tempus. Cras ut dapibus massa. Donec volutpat quam elit, nec aliquet nulla varius quis. Fusce venenatis molestie nisl eu fringilla. Cras at tincidunt justo. Curabitur sed libero viverra, convallis urna ut, sodales nisi. Curabitur posuere pellentesque tellus in rhoncus. Praesent nec pulvinar tellus. Phasellus sodales lorem at metus porttitor, ut suscipit ligula dignissim. Nulla convallis, enim nec convallis ultrices, tortor ex molestie magna, semper cursus sem neque ut velit. Integer tincidunt odio magna, quis sollicitudin odio placerat eget.
+            Mauris at felis a neque vehicula dictum eget nec felis. Ut rutrum nec augue id sagittis. Nunc sem dolor, luctus eu venenatis vitae, placerat condimentum mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sagittis, magna venenatis lobortis ornare, urna mauris volutpat libero, ac commodo sapien ipsum hendrerit sapien. Maecenas luctus nunc nec libero finibus congue. Nam sagittis fringilla neque sit amet tincidunt.
+            Integer ac sagittis odio, non tempor ante. Aenean molestie gravida augue. Ut iaculis cursus sem laoreet gravida. Proin viverra iaculis velit at luctus. Etiam pellentesque interdum ullamcorper. Morbi tristique nulla vel urna efficitur, ac sodales mi venenatis. Mauris lacinia lacus ac ex sollicitudin, sit amet convallis lectus posuere. Nam elit justo, vestibulum suscipit finibus vel, egestas vel ligula. Aliquam erat volutpat. Nullam eget vulputate metus, vitae feugiat elit. Aenean ornare magna quis vestibulum mollis. Aenean nec lorem elementum, viverra quam eu, efficitur sem.
+            Nulla felis justo, commodo eu lobortis sed, faucibus at nibh. Maecenas faucibus molestie magna non semper. Phasellus nec lacus sed metus maximus maximus. Nullam et risus in libero pulvinar vestibulum ornare eleifend lectus. Sed neque mauris, fringilla varius vestibulum a, fringilla ac dui. Mauris ac felis felis. Aenean dolor dui, dapibus non euismod a, facilisis in nunc. Proin fermentum sem libero, sit amet lacinia libero rutrum ac. Nulla eu tellus iaculis, accumsan massa vitae, volutpat ligula.
+          </h3>
+        </Grid>
+      </Grid>
+    </>
+  );
 }
 
