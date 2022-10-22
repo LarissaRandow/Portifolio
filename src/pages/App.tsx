@@ -1,10 +1,13 @@
-import { AppBar, Avatar,Chip, Divider, Grid, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar,Box,Card,CardContent,CardMedia,Chip, Divider, Grid, Modal, Toolbar, Typography } from "@mui/material";
 import { spacing, Stack } from "@mui/system";
 import Button from "@mui/material/Button";
-import React, { MutableRefObject, useRef, useState } from "react";
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import './App.css';
+import './MovieRow.css'
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import BusinessIcon from '@mui/icons-material/Business';
+import  NavigateBeforeIcon  from "@mui/icons-material/NavigateBefore";
+import  NavigateNextIcon  from "@mui/icons-material/NavigateNext";
 
 export const App = () => {
   const refAboutMe = useRef<HTMLHeadingElement>(null);
@@ -32,9 +35,50 @@ export const App = () => {
       })
     }
 
+    const [scrollX, setScrollX] = useState(0);
+
+    const handleLeftArrow = () => {
+      let x = scrollX + Math.round(window.innerWidth / 2);
+      if(x > 0){
+          x = 0;
+      }        
+      setScrollX(x);
+    }
+
+  const handleRightArrow = () => {
+      let x = scrollX - Math.round(window.innerWidth / 2);
+      let listw = 5 * 330;
+      if((window.innerWidth - listw) > x){
+          x = (window.innerWidth - listw) - 60;
+      }
+      setScrollX(x);
+
+    }
+
+    const [open, setOpen] = React.useState(false);
+    var imgSrc = '../Certificados/OWASP.jpg';
+
+    const handleOpen = () => {
+      setOpen(true);
+    };
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    const style = {
+      position: 'absolute' as 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: 500,
+      bgcolor: 'background.paper',
+      boxShadow: 24,
+      p: 4,
+    };
+
     return(
       <>
-      <Grid container style={{background:'#fefeff'}}>
+      <Grid container style={{background:'#fefeff', overflowX:'hidden'}}>
         <AppBar 
             style={{
               position:'fixed', 
@@ -223,7 +267,7 @@ export const App = () => {
           </Grid>
           <Divider sx={{height:'5%', borderBottomWidth:'3px'}}/>
 
-        </Grid>
+        </Grid>        
 
         <Grid 
           ref={refCertifications}
@@ -232,15 +276,97 @@ export const App = () => {
           }} 
         >
           <h2 className="title">Certifications</h2>
-          <h3>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam scelerisque pretium. Pellentesque ac odio venenatis, bibendum sapien eu, blandit dui. Vivamus lacinia tellus eros, consequat laoreet metus rhoncus ac. Morbi ac massa nibh. Suspendisse neque ipsum, interdum sit amet bibendum a, tempus id velit. Quisque vitae nunc dapibus, pellentesque risus eleifend, pellentesque nunc.
-            Proin semper maximus arcu a tempus. Cras ut dapibus massa. Donec volutpat quam elit, nec aliquet nulla varius quis. Fusce venenatis molestie nisl eu fringilla. Cras at tincidunt justo. Curabitur sed libero viverra, convallis urna ut, sodales nisi. Curabitur posuere pellentesque tellus in rhoncus. Praesent nec pulvinar tellus. Phasellus sodales lorem at metus porttitor, ut suscipit ligula dignissim. Nulla convallis, enim nec convallis ultrices, tortor ex molestie magna, semper cursus sem neque ut velit. Integer tincidunt odio magna, quis sollicitudin odio placerat eget.
-            Mauris at felis a neque vehicula dictum eget nec felis. Ut rutrum nec augue id sagittis. Nunc sem dolor, luctus eu venenatis vitae, placerat condimentum mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sagittis, magna venenatis lobortis ornare, urna mauris volutpat libero, ac commodo sapien ipsum hendrerit sapien. Maecenas luctus nunc nec libero finibus congue. Nam sagittis fringilla neque sit amet tincidunt.
-            Integer ac sagittis odio, non tempor ante. Aenean molestie gravida augue. Ut iaculis cursus sem laoreet gravida. Proin viverra iaculis velit at luctus. Etiam pellentesque interdum ullamcorper. Morbi tristique nulla vel urna efficitur, ac sodales mi venenatis. Mauris lacinia lacus ac ex sollicitudin, sit amet convallis lectus posuere. Nam elit justo, vestibulum suscipit finibus vel, egestas vel ligula. Aliquam erat volutpat. Nullam eget vulputate metus, vitae feugiat elit. Aenean ornare magna quis vestibulum mollis. Aenean nec lorem elementum, viverra quam eu, efficitur sem.
-            Nulla felis justo, commodo eu lobortis sed, faucibus at nibh. Maecenas faucibus molestie magna non semper. Phasellus nec lacus sed metus maximus maximus. Nullam et risus in libero pulvinar vestibulum ornare eleifend lectus. Sed neque mauris, fringilla varius vestibulum a, fringilla ac dui. Mauris ac felis felis. Aenean dolor dui, dapibus non euismod a, facilisis in nunc. Proin fermentum sem libero, sit amet lacinia libero rutrum ac. Nulla eu tellus iaculis, accumsan massa vitae, volutpat ligula.
-          </h3>
+          <div className="movieRow">
+            <div className="movieRow--left" onClick={handleLeftArrow}>
+                <NavigateBeforeIcon style={{fontSize: 50}}/>
+            </div>
+            <div className="movieRow--right" onClick={handleRightArrow}>
+                <NavigateNextIcon style={{fontSize: 50}}/>
+            </div>
+          </div>
+          <div className="movieRow--listarea">
+                <div className="movieRow--list" style={{
+                    marginLeft: scrollX,
+                    justifyContent:'center', display:'flex'
+                }}>
+                    <Card className="movieRow--item">
+                      <CardMedia
+                        component="img"
+                        height="194"
+                        image={require('../Certificados/OWASP.jpg')}
+                        onClick={() => {
+                          imgSrc = '../Certificados/OWASP.jpg';
+                          handleOpen();
+                        }}
+                      />
+                      <CardContent>
+                        <Typography className="certificado">
+                          OWASP
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card className="movieRow--item">
+                      <CardMedia
+                        component="img"
+                        height="194"
+                        image={require('../Certificados/OWASP.jpg')}
+                      />
+                      <CardContent>
+                        <Typography className="certificado">
+                          OWASP
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card className="movieRow--item">
+                      <CardMedia
+                        component="img"
+                        height="194"
+                        image={require('../Certificados/OWASP.jpg')}
+                      />
+                      <CardContent>
+                        <Typography className="certificado">
+                          OWASP
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card className="movieRow--item">
+                      <CardMedia
+                        component="img"
+                        height="194"
+                        image={require('../Certificados/OWASP.jpg')}
+                      />
+                      <CardContent>
+                        <Typography className="certificado">
+                          OWASP 
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card className="movieRow--item">
+                      <CardMedia
+                        component="img"
+                        height="194"
+                        image={require('../Certificados/OWASP.jpg')}
+                      />
+                      <CardContent>
+                        <Typography className="certificado">
+                          OWASP 
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                </div>
+            </div>
         </Grid>
       </Grid>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+      >
+        <Box sx={style}>
+          <img src={require('../Certificados/OWASP.jpg')} height="350" ></img>
+        </Box>
+      </Modal>
+
     </>
   );
 }
