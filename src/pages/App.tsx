@@ -56,7 +56,7 @@ export const App = () => {
     }
 
     const [open, setOpen] = React.useState(false);
-    var imgSrc = '../Certificados/OWASP.jpg';
+    const [imgSrc, setimgSrc] = React.useState('./Certificados/OWASP.jpg');
 
     const handleOpen = () => {
       setOpen(true);
@@ -70,7 +70,7 @@ export const App = () => {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: 500,
+      width: 610,
       bgcolor: 'background.paper',
       boxShadow: 24,
       p: 4,
@@ -292,16 +292,16 @@ export const App = () => {
                     <Card className="movieRow--item">
                       <CardMedia
                         component="img"
-                        height="194"
-                        image={require('../Certificados/OWASP.jpg')}
+                        height="200"
+                        image={require('./Certificados/Cisco.jpg')}
                         onClick={() => {
-                          imgSrc = '../Certificados/OWASP.jpg';
+                          setimgSrc('./Certificados/Cisco.jpg');
                           handleOpen();
                         }}
                       />
                       <CardContent>
                         <Typography className="certificado">
-                          OWASP
+                          Cisco - Get Connect
                         </Typography>
                       </CardContent>
                     </Card>
@@ -309,11 +309,15 @@ export const App = () => {
                       <CardMedia
                         component="img"
                         height="194"
-                        image={require('../Certificados/OWASP.jpg')}
+                        image={require('./Certificados/BigData.jpg')}
+                        onClick={() => {
+                          setimgSrc('./Certificados/BigData.jpg');
+                          handleOpen();
+                        }}
                       />
                       <CardContent>
                         <Typography className="certificado">
-                          OWASP
+                          Oracle - Big Data
                         </Typography>
                       </CardContent>
                     </Card>
@@ -321,11 +325,15 @@ export const App = () => {
                       <CardMedia
                         component="img"
                         height="194"
-                        image={require('../Certificados/OWASP.jpg')}
+                        image={require('./Certificados/IOT.jpg')}
+                        onClick={() => {
+                          setimgSrc('./Certificados/IOT.jpg');
+                          handleOpen();
+                        }}
                       />
                       <CardContent>
                         <Typography className="certificado">
-                          OWASP
+                          Oracle - IOT
                         </Typography>
                       </CardContent>
                     </Card>
@@ -333,11 +341,15 @@ export const App = () => {
                       <CardMedia
                         component="img"
                         height="194"
-                        image={require('../Certificados/OWASP.jpg')}
+                        image={require('./Certificados/IA.jpg')}
+                        onClick={() => {
+                          setimgSrc('./Certificados/IA.jpg');
+                          handleOpen();
+                        }}
                       />
                       <CardContent>
                         <Typography className="certificado">
-                          OWASP 
+                          Oracle - IA 
                         </Typography>
                       </CardContent>
                     </Card>
@@ -345,7 +357,11 @@ export const App = () => {
                       <CardMedia
                         component="img"
                         height="194"
-                        image={require('../Certificados/OWASP.jpg')}
+                        image={require('./Certificados/OWASP.jpg')}
+                        onClick={() => {
+                          setimgSrc('./Certificados/OWASP.jpg');
+                          handleOpen();
+                        }}
                       />
                       <CardContent>
                         <Typography className="certificado">
@@ -363,7 +379,7 @@ export const App = () => {
         onClose={handleClose}
       >
         <Box sx={style}>
-          <img src={require('../Certificados/OWASP.jpg')} height="350" ></img>
+          <img src={require(`${imgSrc}`)} height="450" id="parent-modal-description"></img>
         </Box>
       </Modal>
 
