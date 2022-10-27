@@ -91,36 +91,29 @@ export const App = () => {
             <Toolbar style={{justifyContent: 'space-evenly'}}>
                 <Stack direction="row" spacing={12}>
                     <Button color="inherit" onClick={scrollAboutMe}>
-                      <span className='description'>About Me</span>
+                      <span className='commonText'>About Me</span>
                     </Button>
                     <Button color="inherit" onClick={scrollWorkHistory}>
-                      <span className='description'>Work History</span>
+                      <span className='commonText'>Work History</span>
                     </Button>
                     <Button color="inherit" onClick={scrollCertifications}>
-                      <span className='description'>Certifications</span>
+                      <span className='commonText'>Certifications</span>
                     </Button>
                 </Stack>
             </Toolbar>
         </AppBar>
         <Grid 
           ref={refAboutMe}
-          style={{
-            marginTop: '80px',
-          }} 
+          className="background"
         >
-          <Grid sx={{
-              backgroundImage: `url(${"https://img.freepik.com/free-vector/abstract-flowing-waves-background_1048-11741.jpg?w=2000"})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover"
-            }}
-          >
-            <h2 className="title">About Me</h2>
+          <Grid>
+            <h2 className="title" style={{marginTop:'80px'}}>About Me</h2>
             <Avatar sx={{ marginTop:'30px' ,bgcolor: '#7f00e0', marginLeft: 'auto', marginRight:'auto', width: 56, height: 56 }}>LR</Avatar>
             <p className="aboutme">Hey, I'm <span style={{color:'#7f00e0'}}> Larissa Randow</span> </p>
-            <Grid container sx={{marginTop:'20px'}}>
-              <Grid item xs={4} sx={{marginLeft: 'auto', }}>
+            <Grid container sx={{marginTop:'20px', }} >
+              <Grid item xs={4} sx={{marginLeft: 'auto',  }}>
                 <p className="aboutme">Description</p>
-                <p className="description">
+                <p className="commonText" >
                 My interest in programming started when I was 12 years old, when I became enchanted by the world of HTML and spent 
                 hours coding and researching new tools to put on my blog. So when the time came to choose a college, it was no 
                 surprise that Computer Science made my eyes light up. During the 4 years of the course, I was able to obtain a 
@@ -166,7 +159,7 @@ export const App = () => {
         >
           <h2 className="title">Work History</h2>
           <Grid style={{justifyContent:'center', display:'flex'}}>
-            <Grid item xs={3} className='description'>
+            <Grid item xs={3} className='commonText'>
               <Grid container>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
@@ -184,7 +177,7 @@ export const App = () => {
               orientation="vertical" 
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
-            <Grid item xs={5} className='description'>
+            <Grid item xs={5} className='commonText'>
               <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
               <p>
               - Designed and built a Clean API Architecture using .Net and C# for various business segments and services.<br/>
@@ -198,7 +191,7 @@ export const App = () => {
           </Grid>
 
           <Grid style={{justifyContent:'center', display:'flex'}}>
-            <Grid item xs={3} className='description'>
+            <Grid item xs={3} className='commonText'>
               <Grid container>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
@@ -216,7 +209,7 @@ export const App = () => {
               orientation="vertical" 
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
-            <Grid item xs={5} className='description'>
+            <Grid item xs={5} className='commonText'>
               <h3 style={{color:'#0f1b61'}}>Software Developer Inter</h3>
               <p>
               - Developed software for both backend (C# and .Net) and frontend (Angular and Typescript).<br/>
@@ -229,7 +222,7 @@ export const App = () => {
           </Grid>
 
           <Grid style={{justifyContent:'center', display:'flex'}}>
-            <Grid item xs={3} className='description'>
+            <Grid item xs={3} className='commonText'>
               <Grid container>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
@@ -247,7 +240,7 @@ export const App = () => {
               orientation="vertical" 
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
-            <Grid item xs={5} className='description'>
+            <Grid item xs={5} className='commonText'>
               <h3 style={{color:'#0f1b61'}}>Software Developer Inter</h3>
               <p>
               - LAWVR is a Virtual Reality Project to reproduce high-risk working conditions in order to create a safe 
@@ -386,7 +379,7 @@ export const App = () => {
         onClose={handleClose}
       >
         <Box sx={style}>
-          <img src={require(`${imgSrc}`)} height="450" id="parent-modal-description"></img>
+          <img src={require(`${imgSrc}`)} height="450" id="parent-modal-commonText"></img>
         </Box>
       </Modal>
 
