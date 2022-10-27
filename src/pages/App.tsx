@@ -8,6 +8,9 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import BusinessIcon from '@mui/icons-material/Business';
 import  NavigateBeforeIcon  from "@mui/icons-material/NavigateBefore";
 import  NavigateNextIcon  from "@mui/icons-material/NavigateNext";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export const App = () => {
   const refAboutMe = useRef<HTMLHeadingElement>(null);
@@ -82,7 +85,7 @@ export const App = () => {
         <AppBar 
             style={{
               position:'fixed', 
-              background: '#73bbc5',
+              background: '#0f1b61',
             }}
         >
             <Toolbar style={{justifyContent: 'space-evenly'}}>
@@ -113,7 +116,7 @@ export const App = () => {
           >
             <h2 className="title">About Me</h2>
             <Avatar sx={{ marginTop:'30px' ,bgcolor: '#7f00e0', marginLeft: 'auto', marginRight:'auto', width: 56, height: 56 }}>LR</Avatar>
-            <p className="aboutme">Hey, I'm <span style={{color:'#7f00e0'}}>Larissa Randow</span> </p>
+            <p className="aboutme">Hey, I'm <span style={{color:'#7f00e0'}}> Larissa Randow</span> </p>
             <Grid container sx={{marginTop:'20px'}}>
               <Grid item xs={4} sx={{marginLeft: 'auto', }}>
                 <p className="aboutme">Description</p>
@@ -128,25 +131,25 @@ export const App = () => {
               <Grid item xs={4} sx={{marginRight: 'auto' }}>
                 <p className="aboutme">Skills</p>
                 <Grid sx={{justifyContent:'space-evenly', display:'flex'}}>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="C#"/>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label=".Net" />
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Typescript"/>
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="C#"/>
+                  <Chip sx={{background:'#1b252f', color:'white'}} label=".Net" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="Typescript"/>
                 </Grid>
                 <Grid sx={{justifyContent:'space-evenly', display:'flex', marginTop:'30px'}}>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="React" />
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Angular" />
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="HTML" />
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="CSS" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="React" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="Angular" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="HTML" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="CSS" />
                 </Grid>
                 <Grid sx={{justifyContent:'space-evenly', display:'flex', marginTop:'30px'}}>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="GitHub"/>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Git"/>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Azure" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="GitHub"/>
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="Git"/>
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="Azure" />
                 </Grid>
                 <Grid sx={{justifyContent:'space-evenly', display:'flex', marginTop:'30px'}}>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="MySql"/>
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Microsoft SQL Server" />
-                  <Chip sx={{background:'#73bbc5', color:'#0f1b61'}} label="Oracle" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="MySql"/>
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="Microsoft SQL Server" />
+                  <Chip sx={{background:'#1b252f', color:'white'}} label="Oracle" />
                 </Grid>
               </Grid>
             </Grid>
@@ -163,7 +166,7 @@ export const App = () => {
           <h2 className="title">Work History</h2>
           <Grid style={{justifyContent:'center', display:'flex'}}>
             <Grid item xs={3} className='description'>
-              <Grid>
+              <Grid container>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
                   APRIL 2021 - OCTOBER 2022
@@ -183,25 +186,22 @@ export const App = () => {
             <Grid item xs={5} className='description'>
               <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
+              - Designed and built a Clean API Architecture using .Net and C# for various business segments and services.<br/>
+              - Created database in Microsoft SQL Server using Migration features in Entity Framework.<br/>
+              - Developed Websites with React and Typescript in critical projects with a short deadline.<br/>
+              - Managed the Git repository and set up pipelines in Microsoft Azure.<br/>
+              - Mentored trainees on tasks, assisting them in resolving bugs and understanding the problem.<br/>
+
               </p>
             </Grid>
           </Grid>
 
           <Grid style={{justifyContent:'center', display:'flex'}}>
             <Grid item xs={3} className='description'>
-              <Grid>
+              <Grid container>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
-                  APRIL 2021 - OCTOBER 2022
+                  AUGUST 2020 - APRIL 2021
                 </p>
               </Grid>
               <Grid>
@@ -216,33 +216,29 @@ export const App = () => {
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
             <Grid item xs={5} className='description'>
-              <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
+              <h3 style={{color:'#0f1b61'}}>Software Developer Inter</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
+              - Developed software for both backend (C# and .Net) and frontend (Angular and Typescript).<br/>
+              - Participated in meetings to define project requirements and create UML diagrams.<br/>
+              - Presented the program's evolution to the client and obtained their feedback.<br/>
+              - Paired programming with a senior developer to learn about programming best practices.<br/>
+
               </p>
             </Grid>
           </Grid>
 
           <Grid style={{justifyContent:'center', display:'flex'}}>
             <Grid item xs={3} className='description'>
-              <Grid>
+              <Grid container>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <CalendarTodayIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/>
-                  APRIL 2021 - OCTOBER 2022
+                  JULY 2019 - JULY 2020
                 </p>
               </Grid>
               <Grid>
                 <p style={{float:'right', display:'inline-flex'}}>
                   <BusinessIcon sx={{ color:  '#7f00e0', marginRight:'10px'}}/> 
-                  Globalsys
+                  University Vila Velha (UVV)
                 </p>
               </Grid>
             </Grid>
@@ -251,17 +247,15 @@ export const App = () => {
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
             <Grid item xs={5} className='description'>
-              <h3 style={{color:'#0f1b61'}}>Full Stack Developer</h3>
+              <h3 style={{color:'#0f1b61'}}>Software Developer Inter</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id dignissim justo.
-                Nulla ut facilisis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Sed malesuada lobortis pretium.
+              - LAWVR is a Virtual Reality Project to reproduce high-risk working conditions in order to create a safe 
+              training environment for the company's employees. Worked in a university lab, being supervised by a Ph.D. 
+              professor.<br/>
+              - Developed small tasks to integrate the Unity program using the C# programming language.<br/>
+              - Tested resources from other programmers to find bugs and inconsistencies.<br/>
+              - Took several courses to learn more about the platform.<br/>
+
               </p>
             </Grid>
           </Grid>
@@ -273,6 +267,7 @@ export const App = () => {
           ref={refCertifications}
           style={{
             marginTop: '80px',
+            marginBottom:'5px'
           }} 
         >
           <h2 className="title">Certifications</h2>
@@ -373,6 +368,17 @@ export const App = () => {
             </div>
         </Grid>
       </Grid>
+      <footer className="footer">
+            <span className="footertitle">GET IN TOUCH</span>
+
+            <Grid className="teste">
+              <a className="footertext" href="mailto:larissarandow@gmail.com"><EmailIcon /></a>
+              <a className="footertext" href="https://www.linkedin.com/in/larissa-randow/"><LinkedInIcon /></a>
+              <a className="footertext" href="https://github.com/LarissaRandow"><GitHubIcon /></a>
+            </Grid>            
+
+          
+        </footer>      
 
       <Modal
         open={open}
