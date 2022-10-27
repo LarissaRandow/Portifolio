@@ -121,11 +121,12 @@ export const App = () => {
               <Grid item xs={4} sx={{marginLeft: 'auto', }}>
                 <p className="aboutme">Description</p>
                 <p className="description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est diam, ultricies sodales commodo vitae, 
-                  imperdiet nec ligula. Phasellus lobortis et lectus ac scelerisque. Quisque lacinia feugiat volutpat. 
-                  Vestibulum et leo placerat, auctor augue nec, feugiat lorem. Quisque turpis est, placerat ac dignissim et, 
-                  dictum at neque. Donec ipsum urna, interdum vitae odio quis, vestibulum porta magna. Aliquam aliquam 
-                  scelerisque pretium. Pellentesque ac odio venenatis, bibendum
+                My interest in programming started when I was 12 years old, when I became enchanted by the world of HTML and spent 
+                hours coding and researching new tools to put on my blog. So when the time came to choose a college, it was no 
+                surprise that Computer Science made my eyes light up. During the 4 years of the course, I was able to obtain a 
+                solid scientific basis to develop programs, from the planning of the project to the implementation and management 
+                of the software. This, added to the more than 3 years of experience in the market, makes me able to face any 
+                challenge.
                 </p>
               </Grid>
               <Grid item xs={4} sx={{marginRight: 'auto' }}>
