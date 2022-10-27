@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Portifolio/static/css/main.01279a63.css",
-    "main.js": "/Portifolio/static/js/main.55cf6975.js",
+    "main.css": "/Portifolio/static/css/main.b443769c.css",
+    "main.js": "/Portifolio/static/js/main.ca5038a0.js",
     "static/media/OWASP.jpg": "/Portifolio/static/media/OWASP.7c43dc1677d58eb9cd24.jpg",
     "static/media/Cisco.jpg": "/Portifolio/static/media/Cisco.3ab8721f8915762df0bb.jpg",
     "static/media/IOT.jpg": "/Portifolio/static/media/IOT.1741ac72e406254a1a14.jpg",
     "static/media/IA.jpg": "/Portifolio/static/media/IA.469df469706c2b928946.jpg",
     "static/media/BigData.jpg": "/Portifolio/static/media/BigData.48a93a0594ce9ffa244c.jpg",
     "index.html": "/Portifolio/index.html",
-    "main.01279a63.css.map": "/Portifolio/static/css/main.01279a63.css.map",
-    "main.55cf6975.js.map": "/Portifolio/static/js/main.55cf6975.js.map"
+    "main.b443769c.css.map": "/Portifolio/static/css/main.b443769c.css.map",
+    "main.ca5038a0.js.map": "/Portifolio/static/js/main.ca5038a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.01279a63.css",
-    "static/js/main.55cf6975.js"
+    "static/css/main.b443769c.css",
+    "static/js/main.ca5038a0.js"
   ]
 }
