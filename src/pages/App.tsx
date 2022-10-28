@@ -118,7 +118,7 @@ export const App = () => {
                 hours coding and researching new tools to put on my blog. So when the time came to choose a college, it was no 
                 surprise that Computer Science made my eyes light up. During the 4 years of the course, I was able to obtain a 
                 solid scientific basis to develop programs, from the planning of the project to the implementation and management 
-                of the software. This, added to the more than 3 years of experience in the market, makes me able to face any 
+                of the software. This, added to the more than 4 years of experience in the market, makes me able to face any 
                 challenge.
                 </p>
               </Grid>
