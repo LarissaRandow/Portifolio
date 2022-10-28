@@ -210,7 +210,7 @@ export const App = () => {
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
             <Grid item xs={5} className='commonText'>
-              <h3 style={{color:'#0f1b61'}}>Software Developer Inter</h3>
+              <h3 style={{color:'#0f1b61'}}>Software Developer Intern</h3>
               <p>
               - Developed software for both backend (C# and .Net) and frontend (Angular and Typescript).<br/>
               - Participated in meetings to define project requirements and create UML diagrams.<br/>
@@ -241,7 +241,7 @@ export const App = () => {
               flexItem 
               style={{margin:'15px', background:'#7f00e0'}}/>
             <Grid item xs={5} className='commonText'>
-              <h3 style={{color:'#0f1b61'}}>Software Developer Inter</h3>
+              <h3 style={{color:'#0f1b61'}}>Software Developer Intern</h3>
               <p>
               - LAWVR is a Virtual Reality Project to reproduce high-risk working conditions in order to create a safe 
               training environment for the company's employees. Worked in a university lab, being supervised by a Ph.D. 
